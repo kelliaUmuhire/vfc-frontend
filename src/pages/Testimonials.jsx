@@ -44,7 +44,7 @@ const Testimonials = () => {
                 <img
                     src={testimonial.image}
                     alt={`${testimonial.name}'s profile`}
-                    className="w-12 h-12 rounded-full object-cover transform scale-110" // scale the image slightly
+                    className="w-12 h-12 rounded-full object-cover transform scale-110"
                 />
                 <div>
                   <p className="font-bold font-recoleta text-black">{testimonial.name}</p>
@@ -69,7 +69,7 @@ const Testimonials = () => {
                 <img
                     src={testimonial.image}
                     alt={`${testimonial.name}'s profile`}
-                    className="w-12 h-12 rounded-full object-cover transform scale-110" // scale the image slightly
+                    className="w-12 h-12 rounded-full object-cover transform scale-110"
                 />
                 <div>
                   <p className="font-bold font-recoleta text-black">{testimonial.name}</p>
