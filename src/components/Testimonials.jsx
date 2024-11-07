@@ -27,14 +27,14 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <div className="w-screen overflow-hidden bg-testimonial-bg py-10">
+    <div className="w-screen overflow-x-hidden bg-secondary py-10">
       <h2 className="text-center text-3xl font-recoleta font-bold mb-8">Testimonials</h2>
       <div className="space-y-10">
         <div className="flex space-x-10 animate-marqueeLeftToRight">
           {testimonialsData.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white p-6 rounded-lg shadow-lg w-[400px] h-[250px] flex flex-col justify-between"
+              className="bg-white p-6 rounded-lg shadow-lg w-[400px] min-h-[250px] lg:min-h-[300px] flex flex-col justify-between overflow-hidden"
             >
               <div>
                 <h3 className="text-xl font-recoleta text-black mb-3">“{testimonial.quote}”</h3>
@@ -59,19 +59,19 @@ const Testimonials = () => {
           {testimonialsData.map((testimonial) => (
             <div
               key={testimonial.id + testimonialsData.length}
-              className="bg-white p-6 rounded-lg shadow-lg w-[400px] h-[250px] flex flex-col justify-between"
+              className="bg-white p-6 rounded-lg shadow-lg w-[400px] min-h-[250px] lg:min-h-[300px] flex flex-col justify-between overflow-hidden"
             >
               <div>
                 <h3 className="text-xl font-recoleta text-black mb-3">“{testimonial.quote}”</h3>
                 <p className="text-gray-400 font-satoshi text-sm">{testimonial.text}</p>
               </div>
-              <div className="flex items-center space-x-3 mt-4">
+              <div className="flex items-center pr-4 mt-4">
                 <img
                     src={testimonial.image}
                     alt={`${testimonial.name}'s profile`}
                     className="w-12 h-12 rounded-full object-cover transform scale-110"
                 />
-                <div>
+                <div className="ml-3">
                   <p className="font-bold font-recoleta text-black">{testimonial.name}</p>
                   <p className="text-sm text-gray-500 font-satoshi">{testimonial.title}</p>
                 </div>
