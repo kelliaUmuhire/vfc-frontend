@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <main className="bg-secondary px-6 relative overflow-hidden">
+    <main className="pt-28 bg-secondary px-6 relative overflow-hidden">
       <section className="text-center max-w-2xl mx-auto lg:my-0 my-7">
         <h1 className="text-5xl mb-4 pt-10 leading-normal font-recoleta">
           A community built on Love and Family with Christ as our Firm

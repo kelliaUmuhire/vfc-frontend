@@ -20,7 +20,7 @@ export default {
         marqueeRightToLeft: 'marqueeRightToLeft 30s linear infinite'
       },
       colors: {
-        'secondary-bg': '#D0F80C',
+        'testimonial-bg': '#D0F80C',
         'light-grey': '#D3D3D3',
         primary: "#0C5220",
         secondary: "#D0F80C",

@@ -4,7 +4,7 @@ export default function Navbar() {
     document.getElementById("menu").classList.toggle("flex");
   };
   return (
-    <nav className="flex justify-between items-center flex-wrap lg:py-8 lg:px-12 py-8 px-6 bg-secondary">
+    <nav className="absolute top-0 z-10 w-full flex justify-between items-center flex-wrap lg:py-8 lg:px-12 py-8 px-6 bg-transparent">
       <img src="/images/logo.svg" alt="Logo" className="lg:hidden" />
       <button className="lg:hidden" onClick={toggleMenu}>
         Menu
