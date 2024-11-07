@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("/fonts/Recoleta-RegularDEMO.otf");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.otf");
+}
+
+* {
+  font-family: "Satoshi";
+}

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-    theme: {
+  theme: {
     extend: {
       keyframes: {
         marqueeLeftToRight: {
@@ -22,6 +22,8 @@ export default {
       colors: {
         'testimonial-bg': '#D0F80C',
         'light-grey': '#D3D3D3',
+        primary: "#0C5220",
+        secondary: "#D0F80C",
       },
       fontFamily: {
         recoleta: ['Recoleta', 'sans-serif'],
@@ -30,5 +32,4 @@ export default {
     },
   },
   plugins: [],
-
 };
