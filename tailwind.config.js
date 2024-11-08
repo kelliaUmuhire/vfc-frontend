@@ -31,6 +31,15 @@ export default {
         recoleta: ['Recoleta', 'sans-serif'],
         satoshi: ['Satoshi', 'sans-serif'],
       },
+      fontSize: {
+        footer: '12.44px',
+      },
+      lineHeight: {
+        footer: '17.42px',
+      },
+      fontWeight: {
+        footer: '400',
+      },
     },
   },
   plugins: [],
