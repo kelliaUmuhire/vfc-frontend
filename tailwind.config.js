@@ -23,6 +23,8 @@ export default {
         "light-grey": "#D3D3D3",
         primary: "#0C5220",
         secondary: "#D0F80C",
+        "little-green": "#F9FFDA",
+        primary2: "#1B8B3B",
       },
       fontFamily: {
         recoleta: ["Recoleta", "sans-serif"],
