@@ -1,11 +1,13 @@
 import GoalsCard from "../components/GoalsCard";
 import Hero from "../components/Hero";
+import Navbar from "../components/layout/Navbar";
 import Testimonials from "../components/Testimonials";
 import { GOALS } from "../utils/data";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <>
+      <Navbar />
       <Hero />
 
       {/* Our Vision */}
@@ -42,6 +44,6 @@ export default function Home() {
       </section>
 
       <Testimonials />
-    </div>
+    </>
   );
 }
