@@ -2,26 +2,28 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Sermons from "./pages/Sermons";
-import Testimonials from "./components/Testimonials";
+import Layout from "./components/layout/Layout";
 
 // Will be modified as we add more pages
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/",
+        element: <Sermons />,
+      },
+    ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/",
-    element: <Sermons />,
-  },
-  {
-    path: "/testimonials",
-    element: <Testimonials />,
-  }
 ]);
 
 export default function App() {

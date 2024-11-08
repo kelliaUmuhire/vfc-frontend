@@ -1,13 +1,12 @@
 import GoalsCard from "../components/GoalsCard";
 import Hero from "../components/Hero";
-import Navbar from "../components/layout/Navbar";
+import SermonHighlights from "../components/SermonHighlights";
 import Testimonials from "../components/Testimonials";
 import { GOALS } from "../utils/data";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
 
       {/* Our Vision */}
@@ -42,6 +41,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <SermonHighlights />
 
       <Testimonials />
     </>
