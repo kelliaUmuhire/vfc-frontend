@@ -2,11 +2,11 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <div className="bg-gray-100 text-gray-800 p-6 rounded-lg shadow-lg">
+    <div className="bg-gray-100 text-gray-800 p-6 rounded-lg shadow-lg w-full">
       {/* Heading and Description */}
-      <h2 className="text-xl font-bold text-gray-700 mb-4">Subscribe to Our Newsletter</h2>
-      <p className="text-gray-600 mb-6">
-        Get the latest updates on events, sermons, and more directly to your inbox.
+      <h2 className="text-lg font-bold text-gray-700 mb-4">Subscribe to Our Newsletter</h2>
+      <p className="text-gray-600 mb-6 text-sm">
+        Stay updated with our latest events, sermons, and community news.
       </p>
 
       {/* Subscription Form */}
@@ -29,3 +29,4 @@ const Newsletter = () => {
 };
 
 export default Newsletter;
+
