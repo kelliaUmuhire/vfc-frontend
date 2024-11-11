@@ -41,8 +41,8 @@ const Footer = () => {
                 <div className="space-y-4">
                     <h3 className="text-lg font-bold">CONTACT US</h3>
                     <p>+1 (999) 999-99-99</p>
-                    <p>hello@loremipsum.com</p>
-                    <p>London</p>
+                    <p>victoryfaithchurchesint@gmail.com</p>
+                    <p>Nigeria</p>
                     <div className="relative mt-4">
                         <input
                             type="email"
