@@ -1,12 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Newsletter from './Newsletter';
 
 const Footer = () => {
     return (
-        <div className="bg-[#F9F8EA] p-10 md:p-20 flex justify-between">
-            <div className="w-1/2"></div>
-
+        <div className="bg-[#F9F8EA] p-10 md:p-20 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
+            {/* Left Side: Newsletter */}
+            <div className="w-full md:w-1/2">
+                <Newsletter />
+            </div>
+            
+            {/* Right Side: Footer Content */}
             <div className="w-1/2 space-y-8 text-[#0C5220] font-footer text-footer leading-footer">
                 <div className="flex items-start space-x-20">
                     <div>
