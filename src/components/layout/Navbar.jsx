@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   const toggleMenu = () => {
     document.getElementById("menu").classList.toggle("hidden");
@@ -13,12 +15,31 @@ export default function Navbar() {
         id="menu"
         className="w-full lg:flex-row flex-col justify-between items-center lg:space-y-0 space-y-3 lg:mt-0 mt-3 lg:flex hidden"
       >
-        <a href="/">About</a>
-        <a href="/">Ministries</a>
-        <a href="/">Sermons</a>
+        <div className="relative group">
+          {/* <Link to="/" className="inline-flex items-center">
+            
+          </Link> */}
+          <span className="inline-flex items-center cursor-pointer">
+            <span>About</span>
+            <img src="/images/arrow-down.svg" className="mt-1 ml-1.5" />
+          </span>
+          <div className="absolute hidden group-hover:block bg-little-green shadow-lg rounded text-sm p-2">
+            <Link to="/vision" className="block px-4 py-2">
+              Vision
+            </Link>
+            <Link to="/beliefs" className="block px-4 py-2">
+              Beliefs
+            </Link>
+            <Link to="/leaders" className="block px-4 py-2">
+              Leaders
+            </Link>
+          </div>
+        </div>
+        <Link to="/">Ministries</Link>
+        <Link to="/">Sermons</Link>
         <img src="/images/logo.svg" alt="Logo" className="hidden lg:block" />
-        <a href="/">Contact</a>
-        <a href="/">Events</a>
+        <Link to="/">Contact</Link>
+        <Link to="/">Events</Link>
         <button className="bg-primary text-white px-8 py-2 rounded-md font-recoleta">
           DONATE
         </button>

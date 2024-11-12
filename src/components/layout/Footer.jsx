@@ -6,7 +6,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import Newsletter from "./Newsletter";
+import Newsletter from "../Newsletter";
 
 const Footer = () => {
   return (
