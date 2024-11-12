@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Sermons from "./pages/Sermons";
 import Layout from "./components/layout/Layout";
+import Vision from "./pages/Vision";
 
 // Will be modified as we add more pages
 const routes = createBrowserRouter([
@@ -13,6 +14,10 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/vision",
+        element: <Vision />,
       },
       {
         path: "/about",
