@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Sermons from "./pages/Sermons";
 import Layout from "./components/layout/Layout";
 import Vision from "./pages/Vision";
+import Livestreams from "./pages/Livestreams";
 
 // Will be modified as we add more pages
 const routes = createBrowserRouter([
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
         path: "/",
         element: <Sermons />,
       },
+      {
+        path: "/livestreams",
+        element: <Livestreams />,
+      }
     ],
   },
 ]);
