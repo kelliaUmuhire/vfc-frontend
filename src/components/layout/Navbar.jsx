@@ -6,14 +6,16 @@ export default function Navbar() {
     document.getElementById("menu").classList.toggle("flex");
   };
   return (
-    <nav className="absolute top-0 z-10 w-full flex justify-between items-center flex-wrap lg:py-8 lg:px-12 py-8 px-6 bg-transparent">
-      <img src="/images/logo.svg" alt="Logo" className="lg:hidden" />
+    <nav className="absolute top-0 z-30 w-full flex justify-between items-center flex-wrap lg:py-8 lg:px-12 py-8 px-6 bg-transparent">
+      <Link to="/">
+        <img src="/images/logo.svg" alt="Logo" className="lg:hidden" />
+      </Link>
       <button className="lg:hidden" onClick={toggleMenu}>
         Menu
       </button>
       <div
         id="menu"
-        className="w-full lg:flex-row flex-col justify-between items-center lg:space-y-0 space-y-3 lg:mt-0 mt-3 lg:flex hidden"
+        className="w-full lg:flex-row flex-col justify-between items-center lg:space-y-0 space-y-3 lg:mt-0 mt-3 lg:flex hidden bg-little-green lg:py-0 py-10"
       >
         <div className="relative group">
           {/* <Link to="/" className="inline-flex items-center">
@@ -36,7 +38,7 @@ export default function Navbar() {
           </div>
         </div>
         <Link to="/">Ministries</Link>
-        <Link to="/">Sermons</Link>
+        <Link to="/sermons">Sermons</Link>
         <img src="/images/logo.svg" alt="Logo" className="hidden lg:block" />
         <Link to="/">Contact</Link>
         <Link to="/">Events</Link>
