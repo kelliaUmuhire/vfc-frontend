@@ -1,5 +1,8 @@
-// /components/DonationButton.js
+// /components/DonationButton.jsx
 import React, { useState } from 'react';
+import PayPalForm from './PayPalForm';
+import MobileMoneyForm from './MobileMoneyForm';
+import CreditCardForm from './CreditCardForm';
 
 export default function DonationButton() {
   const [paymentOption, setPaymentOption] = useState('');
@@ -7,7 +10,6 @@ export default function DonationButton() {
   const handleDonation = (option) => {
     setPaymentOption(option);
     console.log(`Selected payment option: ${option}`);
-    // Further payment handling logic can be added here (e.g., calling a payment API)
   };
 
   return (
@@ -33,7 +35,7 @@ export default function DonationButton() {
           Credit/Debit Card
         </button>
       </div>
-      
+
       {/* Display the selected payment method */}
       {paymentOption && (
         <div className="mt-4 text-center">
