@@ -15,7 +15,7 @@ export default function Navbar() {
       </button>
       <div
         id="menu"
-        className="w-full lg:flex-row flex-col justify-between items-center lg:space-y-0 space-y-3 lg:mt-0 mt-3 lg:flex hidden bg-little-green lg:py-0 py-10"
+        className="w-full lg:flex-row flex-col justify-between items-center lg:space-y-0 space-y-3 lg:mt-0 mt-3 lg:flex hidden lg:bg-transparent bg-little-green lg:py-0 py-10"
       >
         <div className="relative group">
           {/* <Link to="/" className="inline-flex items-center">
