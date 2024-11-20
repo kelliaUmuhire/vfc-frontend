@@ -1,58 +1,68 @@
 // /components/CreditCardForm.jsx
 import React, { useState } from 'react';
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 
 export default function CreditCardForm() {
-  const [cardNumber, setCardNumber] = useState('');
-  const [expirationDate, setExpirationDate] = useState('');
-  const [cvc, setCvc] = useState('');
+  const stripe = useStripe();
+  const elements = useElements();
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
-  const handleCreditCardPayment = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic for handling credit card payment
-    console.log(`Processing payment for card: ${cardNumber}`);
+    if (!stripe || !elements) {
+      return;
+    }
+
+    setIsProcessing(true);
+
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: elements.getElement(CardElement),
+    });
+
+    if (error) {
+      console.error(error);
+      alert('Payment failed: ' + error.message);
+    } else {
+      console.log('Payment Method:', paymentMethod);
+      setPaymentSuccess(true);
+    }
+
+    setIsProcessing(false);
   };
 
   return (
-    <div>
-      <h3 className="text-xl mb-4">Pay with Credit/Debit Card</h3>
-      <form onSubmit={handleCreditCardPayment} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium">Card Number</label>
-          <input
-            type="text"
-            value={cardNumber}
-            onChange={(e) => setCardNumber(e.target.value)}
-            className="border p-2 rounded-md w-full"
-            required
+    <div className="credit-card-form">
+      <h3 className="text-center text-xl font-bold mb-4">Donate with Credit/Debit Card</h3>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="mb-4">
+          <label htmlFor="card" className="block mb-2">Card Information</label>
+          <CardElement
+            id="card"
+            options={{
+              style: {
+                base: {
+                  fontSize: '16px',
+                  color: '#424770',
+                  '::placeholder': {
+                    color: '#aab7c4',
+                  },
+                },
+                invalid: {
+                  color: '#9e2146',
+                },
+              },
+            }}
           />
         </div>
-        <div className="flex space-x-4">
-          <div className="w-1/2">
-            <label className="block text-sm font-medium">Expiration Date</label>
-            <input
-              type="text"
-              value={expirationDate}
-              onChange={(e) => setExpirationDate(e.target.value)}
-              className="border p-2 rounded-md w-full"
-              required
-            />
-          </div>
-          <div className="w-1/2">
-            <label className="block text-sm font-medium">CVC</label>
-            <input
-              type="text"
-              value={cvc}
-              onChange={(e) => setCvc(e.target.value)}
-              className="border p-2 rounded-md w-full"
-              required
-            />
-          </div>
-        </div>
+
         <button
           type="submit"
-          className="bg-red-500 text-white py-2 px-6 rounded-md"
+          disabled={isProcessing || paymentSuccess}
+          className="bg-red-500 text-white py-2 px-6 rounded-md w-full"
         >
-          Donate Now
+          {isProcessing ? 'Processing...' : paymentSuccess ? 'Payment Successful' : 'Donate Now'}
         </button>
       </form>
     </div>
