@@ -4,44 +4,51 @@ import React, { useState } from 'react';
 export default function MobileMoneyForm() {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [amount, setAmount] = useState('');
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  const handleMobileMoneyPayment = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic for processing mobile money payment
-    console.log(`Payment initiated for ${amount} via Mobile Money. Phone number: ${phoneNumber}`);
+    setIsProcessing(true);
+    console.log(`Processing Mobile Money donation: ${amount} from ${phoneNumber}`);
+    setTimeout(() => {
+      setIsProcessing(false);
+      alert('Mobile Money payment successful!');
+    }, 2000);
   };
 
   return (
-    <div>
-      <h3 className="text-xl mb-4">Pay with Mobile Money</h3>
-      <form onSubmit={handleMobileMoneyPayment} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium">Phone Number</label>
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            className="border p-2 rounded-md w-full"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium">Amount</label>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="border p-2 rounded-md w-full"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-green-500 text-white py-2 px-6 rounded-md"
-        >
-          Donate Now
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="mobile-money-form space-y-4">
+      <div>
+        <label htmlFor="phoneNumber" className="block mb-2">Phone Number</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          className="border border-gray-300 rounded-md p-2 w-full"
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="amount" className="block mb-2">Amount (NGN)</label>
+        <input
+          type="number"
+          id="amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="border border-gray-300 rounded-md p-2 w-full"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={isProcessing}
+        className="bg-green-500 text-white py-2 px-6 rounded-md w-full"
+      >
+        {isProcessing ? 'Processing...' : 'Donate with Mobile Money'}
+      </button>
+    </form>
   );
 }
