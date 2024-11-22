@@ -2,7 +2,7 @@ const LiveStreams = () => {
   return (
     <div>
       <div className="bg-secondary text-center py-10">
-        <h1 className="text-black font-recoleta text-2xl md:text-3xl mb-[10px] ml-[15px] md:ml-[55px] lg:ml-[200px] xl:ml-[372px] mt-[40px] md:mt-[60px] xl:mt-[80px] text-left">
+        <h1 className="text-black font-recoleta text-2xl md:text-3xl mb-[10px] ml-[15px] md:ml-[55px] lg:ml-[70px] xl:ml-[130px] mt-[40px] md:mt-[60px] xl:mt-[80px] text-left">
           Watch our Livestreams below
         </h1>
 
@@ -27,11 +27,12 @@ const LiveStreams = () => {
         <h1 className="text-black font-recoleta text-2xl md:text-3xl mb-6 text-left">
           Sermon Archives
         </h1>
-        <div className="flex justify-center">
+        <div className="flex justify-center flex-wrap lg:flex-nowrap">
           <div
-            className="p-6 rounded-lg shadow-md mr-10"
+            className="p-6 rounded-lg shadow-md lg:mr-10 mb-6 lg:mb-0"
             style={{
-              width: "351px",
+              width: "100%",
+              maxWidth: "351px",
               height: "1029px",
               backgroundColor: "#FFFDE7",
               borderRadius: "10px 0px 0px 0px",
@@ -103,51 +104,29 @@ const LiveStreams = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 w-full p-6">
-            {/* eslint-disable-next-line no-unused-vars */}
-            {[...Array(3)].map((_) => (
-              <>
-                <div
-                  className="relative bg-cover bg-center rounded-lg overflow-hidden"
-                  style={{
-                    height: "298px",
-                    backgroundImage: "url('/images/worship.png')",
-                  }}
-                >
-                  <div className="absolute bottom-2 left-2 text-secondary ml-5 mb-5">
-                    <p className="text-2xl font-bold">Power of Love</p>
-                    <p className="text-sm">Pst Adam Jacob</p>
-                  </div>
-                  <div className="absolute top-2 right-2 bg-secondary p-1 rounded flex items-center">
-                    <img
-                      src="/images/play-icon.svg"
-                      alt="Watch Icon"
-                      className="w-4 h-4 mr-1"
-                    />
-                    <span className="text-xs">Watch</span>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full p-6">
+            {[...Array(6)].map((_, index) => (
+              <div
+                key={index}
+                className="relative bg-cover bg-center rounded-lg overflow-hidden"
+                style={{
+                  height: "298px",
+                  backgroundImage: "url('/images/worship.png')",
+                }}
+              >
+                <div className="absolute bottom-2 left-2 text-secondary ml-5 mb-5">
+                  <p className="text-2xl font-bold">Power of Love</p>
+                  <p className="text-sm">Pst Adam Jacob</p>
                 </div>
-                <div
-                  className="relative bg-cover bg-center rounded-lg overflow-hidden"
-                  style={{
-                    height: "298px",
-                    backgroundImage: "url('/images/worship.png')",
-                  }}
-                >
-                  <div className="absolute bottom-2 left-2 text-secondary ml-5 mb-5">
-                    <p className="text-2xl font-bold">How to build Faith</p>
-                    <p className="text-sm">Pst Adam Jacob</p>
-                  </div>
-                  <div className="absolute top-2 right-2 bg-secondary p-1 rounded flex items-center">
-                    <img
-                      src="/images/play-icon.svg"
-                      alt="Watch Icon"
-                      className="w-4 h-4 mr-1"
-                    />
-                    <span className="text-xs">Watch</span>
-                  </div>
+                <div className="absolute top-2 right-2 bg-secondary p-1 rounded flex items-center">
+                  <img
+                    src="/images/play-icon.svg"
+                    alt="Watch Icon"
+                    className="w-4 h-4 mr-1"
+                  />
+                  <span className="text-xs">Watch</span>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>

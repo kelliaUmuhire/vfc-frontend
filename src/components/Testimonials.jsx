@@ -34,29 +34,26 @@ const Testimonials = () => {
           {testimonialsData.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white p-6 rounded-lg shadow-lg w-[400px] h-[250px] flex flex-col justify-between"
+              className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-[400px] sm:max-w-[500px] flex flex-col justify-between"
+              style={{ minHeight: '250px', height: 'auto' }}
             >
-              <div>
-                <h3 className="text-xl font-recoleta text-black mb-3">
+              <div className="mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-recoleta text-black mb-3">
                   “{testimonial.quote}”
                 </h3>
-                <p className="text-gray-400 font-satoshi text-sm">
+                <p className="text-gray-400 font-satoshi text-sm break-words">
                   {testimonial.text}
                 </p>
               </div>
-              <div className="flex items-center space-x-3 mt-4">
+              <div className="flex items-center space-x-3 mt-4" style={{ marginRight: '2.4rem' }}>
                 <img
                   src={testimonial.image}
                   alt={`${testimonial.name}'s profile`}
                   className="w-12 h-12 rounded-full object-cover transform scale-110"
                 />
                 <div>
-                  <p className="font-bold font-recoleta text-black">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-gray-500 font-satoshi">
-                    {testimonial.title}
-                  </p>
+                  <p className="font-bold font-recoleta text-black">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500 font-satoshi">{testimonial.title}</p>
                 </div>
               </div>
             </div>
@@ -67,29 +64,26 @@ const Testimonials = () => {
           {testimonialsData.map((testimonial) => (
             <div
               key={testimonial.id + testimonialsData.length}
-              className="bg-white p-6 rounded-lg shadow-lg w-[400px] h-[250px] flex flex-col justify-between"
+              className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-[400px] sm:max-w-[500px] flex flex-col justify-between"
+              style={{ minHeight: '250px', height: 'auto' }}
             >
-              <div>
-                <h3 className="text-xl font-recoleta text-black mb-3">
+              <div className="mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-recoleta text-black mb-3">
                   “{testimonial.quote}”
                 </h3>
-                <p className="text-gray-400 font-satoshi text-sm">
+                <p className="text-gray-400 font-satoshi text-sm break-words">
                   {testimonial.text}
                 </p>
               </div>
-              <div className="flex items-center space-x-3 mt-4">
+              <div className="flex items-center space-x-3 mt-4" style={{ marginRight: '2.4rem' }}>
                 <img
                   src={testimonial.image}
                   alt={`${testimonial.name}'s profile`}
                   className="w-12 h-12 rounded-full object-cover transform scale-110"
                 />
                 <div>
-                  <p className="font-bold font-recoleta text-black">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-gray-500 font-satoshi">
-                    {testimonial.title}
-                  </p>
+                  <p className="font-bold font-recoleta text-black">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500 font-satoshi">{testimonial.title}</p>
                 </div>
               </div>
             </div>
