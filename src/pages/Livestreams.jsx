@@ -13,13 +13,17 @@ const LiveStreams = () => {
             borderRadius: "30",
           }}
         >
-          <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+          {/* <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
             <img
               src="/images/youtube-icon-logo.svg"
               alt="Play"
               className="w-[60px] h-[40px] md:w-[70px] md:h-[50px] lg:w-[80px] lg:h-[55px] xl:w-[91px] xl:h-[64px]"
             />
-          </div>
+          </div> */}
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/zP2meuMm7Nk?autoplay=1&mute=1"
+          ></iframe>
         </div>
       </div>
 
