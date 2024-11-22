@@ -36,7 +36,9 @@ export default function Navbar() {
         </div>
         <Link to="/sermons">Ministries</Link>
         <Link to="/sermons">Sermons</Link>
-        <img src="/images/logo.svg" alt="Logo" className="hidden lg:block" />
+        <Link to="/">
+          <img src="/images/logo.svg" alt="Logo" className="hidden lg:block" />
+        </Link>
         <Link to="/">Contact</Link>
         <Link to="/">Events</Link>
         <button className="bg-primary text-white px-8 py-2 rounded-md font-recoleta">
