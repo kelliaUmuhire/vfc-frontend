@@ -65,6 +65,3 @@ Deploy using platforms like **Heroku**, **Render**, or **AWS**.
 ## **License**
 Licensed under the [MIT License](LICENSE).
 
---- 
-
-Let me know if further edits are needed!
