@@ -1,7 +1,6 @@
 // /backend/routes/paymentRoutes.js
-
 const express = require('express');
-const stripe = require('stripe')('your-secret-key'); // Replace with your actual Stripe secret key
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);  // Get the secret key from the environment variable
 const router = express.Router();
 
 router.post('/payment/credit-debit', async (req, res) => {
@@ -11,7 +10,7 @@ router.post('/payment/credit-debit', async (req, res) => {
     // Process the payment with Stripe
     const paymentIntent = await stripe.paymentIntents.create({
       amount, // amount in cents
-      currency: 'usd', // Replace with the desired currency
+      currency: 'usd', // Use your preferred currency
       payment_method: paymentMethodId,
       confirm: true,
     });
@@ -19,7 +18,7 @@ router.post('/payment/credit-debit', async (req, res) => {
     // Send success response
     res.status(200).json({ message: 'Payment successful', paymentIntent });
   } catch (error) {
-    // Send error response if the payment fails
+    // Handle payment errors
     console.error('Payment Error:', error);
     res.status(500).json({ message: 'Payment failed', error: error.message });
   }
