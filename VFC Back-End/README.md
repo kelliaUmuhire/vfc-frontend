@@ -1,19 +1,17 @@
 # **Victory Faith Church Backend**
 
-The backend service for the Victory Faith Church website, built with **Node.js**, **Express.js**, and **MongoDB**.
+The backend service for the Victory Faith Church website, built with **Node.js**,and **Express.js**.
 
 ---
 
 ## **Features**
-- RESTful API for sermons, ministries, and events.
-- Database integration with MongoDB.
+- Stripe API for donation process
 - Scalable and ready for future features like authentication.
 
 ---
 
 ## **Technologies**
 - **Node.js** & **Express.js**
-- **MongoDB** & **Mongoose**
 - **dotenv** for environment variables.
 
 ---
@@ -32,7 +30,7 @@ The backend service for the Victory Faith Church website, built with **Node.js**
    ```
 3. Add a `.env` file:
    ```env
-   MONGO_URI=<your-mongo-db-uri>
+
    PORT=5000
    ```
 
@@ -40,25 +38,6 @@ The backend service for the Victory Faith Church website, built with **Node.js**
    ```bash
    npm run dev
    ```
-
----
-
-## **API Endpoints**
-
-### **Base URL:** `http://localhost:5000`
-
-- **Sermons**:  
-  - `GET /api/sermons`: Fetch all sermons.  
-  - `POST /api/sermons`: Add a new sermon.
-
-- **Ministries**:  
-  - `GET /api/ministries`: Fetch all ministries.  
-  - `POST /api/ministries`: Add a new ministry.
-
----
-
-## **Deployment**
-Deploy using platforms like **Heroku**, **Render**, or **AWS**.
 
 ---
 
