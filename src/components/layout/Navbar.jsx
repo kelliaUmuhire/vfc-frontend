@@ -41,9 +41,11 @@ export default function Navbar() {
         </Link>
         <Link to="/">Contact</Link>
         <Link to="/">Events</Link>
-        <button className="bg-primary text-white px-8 py-2 rounded-md font-recoleta">
-          DONATE
-        </button>
+        <Link to="/donate">
+          <button className="bg-primary text-white px-8 py-2 rounded-md font-recoleta">
+            DONATE
+          </button>
+        </Link>
       </div>
     </nav>
   );

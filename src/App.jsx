@@ -6,6 +6,7 @@ import Vision from "./pages/Vision";
 import Livestreams from "./pages/Livestreams";
 import Leaders from "./pages/Leaders";
 import Beliefs from "./pages/Beliefs";
+import Donate from "./pages/Donate";
 
 // Will be modified as we add more pages
 const routes = createBrowserRouter([
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
       {
         path: "/beliefs",
         element: <Beliefs />,
+      },
+      {
+        path: "/donate",
+        element: <Donate />,
       },
     ],
   },
